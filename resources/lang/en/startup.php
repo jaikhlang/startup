@@ -87,7 +87,7 @@ return [
         ],
         'contactform' => [
             'created'                   => 'Thank you for your message. We will get back to you soon',
-        ],        
+        ],
     ],
 
     /* Languages */
@@ -108,8 +108,8 @@ return [
             'title'                     => 'Contact Form',
             'subject'                   => 'Subject',
             'message'                   => 'Message',
-            'send'                      => 'Send Message',            
-        ],        
+            'send'                      => 'Send Message',
+        ],
         'profile' => [
             'title'                 => 'My profile',
             'profile_photo'         => 'Profile Photo',
@@ -192,7 +192,7 @@ return [
         '404' => [
             '404'                   => 'Error 404: The page you are looking for could not be found.',
             'button'                => 'Return home',
-        ],           
+        ],
     ],
 
     /* NAV */
@@ -257,7 +257,7 @@ return [
             'title'             => 'has send you a new message from contact form.',
             'subject'           => 'Subject',
             'message'           => 'Message',
-        ],          
+        ],
     ],
 
     /* Footer */

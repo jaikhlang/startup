@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
-use Session;
 
 class ContactController extends Controller
 {
-
-
     /**
      * Show the application contact form.
      *
@@ -20,28 +17,27 @@ class ContactController extends Controller
         return view('contact.index');
     }
 
-	public function postContact(Request $request) {
-	    
-		$this->validate($request, [
-		    'name' => 'required',
-			'email' => 'required|email',
-			'subject' => 'required|min:3',
-			'message' => 'required|min:10']);
-			
-		$data = array(
-		    'name' => $request->name,
-			'email' => $request->email,
-			'subject' => $request->subject,
-			'bodyMessage' => $request->message
-			);
-			
-		Mail::send('emails.contact', $data, function($message) use ($data){
-			$message->from($data['email']);
-			$message->to(env('MAIL_FROM'));
-			$message->subject($data['subject']);
-		});
-		
-		return redirect('/contact')->with('success', trans('startup.notifications.contactform.created'));
-	}
-    
+    public function postContact(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required|min:3',
+            'message' => 'required|min:10', ]);
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'bodyMessage' => $request->message,
+            ];
+
+        Mail::send('emails.contact', $data, function ($message) use ($data) {
+            $message->from($data['email']);
+            $message->to(env('MAIL_FROM'));
+            $message->subject($data['subject']);
+        });
+
+        return redirect('/contact')->with('success', trans('startup.notifications.contactform.created'));
+    }
 }
