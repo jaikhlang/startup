@@ -19,7 +19,7 @@
                 <div class="panel-body">
                     <div class="text-center">
                         
-                            <img src="/uploads/avatars/{{ Auth::user()->profile_photo }}" width="120" height="120" class="img-rounded" alt="Profile Photo">
+                            <img src="/uploads/avatars/{{ Auth::user()->profile_photo }}" width="140" height="140" class="img-rounded" alt="Profile Photo">
                             
                                 <hr>
                                 
