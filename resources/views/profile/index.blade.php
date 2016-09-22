@@ -23,17 +23,13 @@
                             
                                 <hr>
                                 
-                            <p><span class='label label-primary' id="upload-file-info"></span></p>    
-                                
-    {!! Form::open(['url' => 'profile/updatephoto', 'method' => 'post', 'class' => 'form-horizontal', 'files' => true], Auth::user()->id) !!}                             
+                            {!! Form::open(['url' => 'profile/updatephoto', 'method' => 'post', 'class' => 'form-horizontal', 'files' => true], Auth::user()->id) !!}                             
     
-        <label class="btn btn-default btn-file">
-           <i class="fa fa-photo" aria-hidden="true"></i> {{ trans('startup.pages.profile.browse') }} <input type="file" name="profile_photo" id="profile_photo" style="display: none;" onchange="$('#upload-file-info').html($(this).val());">
-        </label>
+                                <label class="btn btn-primary btn-file">
+                                   <i class="fa fa-photo" aria-hidden="true"></i> {{ trans('startup.pages.profile.change_photo') }} <input type="file" name="profile_photo" id="profile_photo" style="display: none;" onchange="this.form.submit()">
+                                </label>
     
-    <button class="btn btn-primary" type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i> {{ trans('startup.pages.profile.change_photo') }}</button>
-    
-    {!! Form::close() !!}
+                            {!! Form::close() !!}
     
                     </div>
                 </div>
