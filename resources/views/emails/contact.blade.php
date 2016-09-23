@@ -314,7 +314,7 @@ a {
 								</tr>								
 								<tr>
 									<td class="content-block">
-										<b>{{ trans('startup.emails.contactform.message') }}:</b> {{ $bodyMessage }}
+										<b>{{ trans('startup.emails.contactform.message') }}:</b> <?php echo Parsedown::instance()->text($bodyMessage) ?>
 									</td>
 								</tr>
 								<tr>
