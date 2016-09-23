@@ -14,6 +14,11 @@
 							<a href="{{ url('/profile/security') }}">
 							<i class="fa fa-key"></i>
 							{{ trans('startup.nav.profile.security') }} </a>
+						</li>	
+						<li class="{{ set_active(['profile/messages*', 'profile/messages*']) }}">
+							<a href="{{ url('/profile/messages') }}">
+							<i class="fa fa-comments"></i>
+							{{ trans('startup.nav.profile.messages') }} @include('messenger.unread-count')</a>
 						</li>						
 					</ul>
 					</div>

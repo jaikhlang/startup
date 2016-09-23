@@ -8,21 +8,21 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'StartUp 5.3') }}</title>
     
     <!-- Styles Authy-->
-    <link rel="stylesheet" href="/css/flags.authy.css" />
-    <link rel="stylesheet" href="/css/form.authy.css" />
-
+    <link rel="stylesheet" href="/css/flags.authy.css">
+    <link rel="stylesheet" href="/css/form.authy.css">
     <!-- Styles App-->
-    <link href="/css/app.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="/css/app.css">
     <!-- Styles StartUp-->
-    <link href="/css/startup.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="/css/startup.css">
     <!-- Style Font Awesome -->
     <link rel="stylesheet" href="/css/font-awesome.min.css">
-
+    <!-- Bootstrap Select -->
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css">    
+     <!-- SimpleMDE -->
+    <link rel="stylesheet" href="/css/simplemde.min.css">   
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -83,7 +83,7 @@
                         <li class="{{ set_active(['login', 'login']) }}"><a href="{{ url('/login') }}">{{ trans('startup.nav.front.login') }}</a></li>
                         <li class="{{ set_active(['register', 'register']) }}"><a href="{{ url('/register') }}">{{ trans('startup.nav.front.register') }}</a></li>
                     @else
-                    
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown" role="button" aria-expanded="false">
                                 <img src="/uploads/avatars/{{ Auth::user()->profile_photo }}" width="30" height="30" class="img-circle"> 
@@ -127,7 +127,7 @@
 
  <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
-      <p class="navbar-text pull-left">{{ config('app.name', 'Laravel') }} -
+      <p class="navbar-text pull-left">{{ config('app.name', 'StartUp 5.3') }} -
            {{ trans('startup.built_with') }} <i class="fa fa-coffee" aria-hidden="true"></i> {{ trans('startup.and') }} <i class="fa fa-heart" aria-hidden="true"></i>
       </p>
       
@@ -142,11 +142,11 @@
     <script src="/js/app.js"></script>
     <script src="/js/startup.js"></script>
     <script src="/js/form.authy.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip(); 
-        });
-    </script>    
-@yield('scripts')  
+    <script src="/js/bootstrap-select.min.js"></script>
+    <script src="/js/simplemde.min.js"></script>    
+    <script> var simplemde = new SimpleMDE(); </script>    
+    
+    @yield('scripts')  
+    
 </body>
 </html>
