@@ -23,14 +23,16 @@
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
         "spatie/laravel-permission": "^1.5",
-	"laravelcollective/html": "5.3.*",
+	    "laravelcollective/html": "5.3.*",
         "intervention/image": "^2.3",
         "spatie/laravel-activitylog": "^1.7",
         "larapack/config-writer": "1.*",
         "spatie/laravel-backup": "^3.10",
         "dflydev/apache-mime-types": "^1.0",
         "srmklive/authy": "^0.5.7",
-        "barryvdh/laravel-ide-helper": "~2.0"
+        "barryvdh/laravel-ide-helper": "~2.0",
+	    "cmgmyr/messenger": "~2.0",
+        "erusev/parsedown": "^1.6"        
   },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
