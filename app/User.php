@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Cmgmyr\Messenger\Traits\Messagable;
 use Cache;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -13,6 +14,7 @@ class User extends Authenticatable implements TwoFactorAuthenticatableContract
 {
     use Notifiable, TwoFactorAuthenticatable;
     use HasRoles;
+    use Messagable;
 
     /**
      * The attributes that are mass assignable.

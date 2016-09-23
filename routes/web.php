@@ -33,6 +33,22 @@ Route::get('/', 'HomeController@index');
 Route::group(['middleware' => ['role:User,view-profile']], function () {
     Route::group(['prefix' => 'profile'], function () {
         Route::group(['namespace' => 'Profile'], function () {
+            
+            Route::group(['prefix' => 'messages'], function () {
+                
+                Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
+                
+                Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
+                
+                Route::post('/', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
+                
+                Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
+                
+                Route::delete('{id}', ['as' => 'messages.destroy', 'uses' => 'MessagesController@destroy']);
+                
+                Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
+            });            
+            
             Route::get('/', 'ProfileController@index');
 
             Route::get('/security', 'ProfileController@security');
