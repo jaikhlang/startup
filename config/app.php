@@ -184,6 +184,7 @@ return [
         Spatie\Backup\BackupServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Srmklive\Authy\Providers\AuthyServiceProvider::class,
+        Cmgmyr\Messenger\MessengerServiceProvider::class,
     ],
 
     /*
