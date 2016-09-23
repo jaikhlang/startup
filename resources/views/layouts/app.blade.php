@@ -146,6 +146,12 @@
     <script src="/js/simplemde.min.js"></script>    
     <script> var simplemde = new SimpleMDE(); </script>    
     
+    <script type="text/javascript">
+        @if (count($errors) > 0)
+            $('#myModal').modal('show');
+        @endif
+    </script> 
+    
     @yield('scripts')  
     
 </body>
