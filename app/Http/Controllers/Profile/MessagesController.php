@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Profile;
 
-use DB;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -12,17 +11,15 @@ use Cmgmyr\Messenger\Models\Thread;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 
 class MessagesController extends Controller
 {
-    
     public function __construct()
     {
         $this->middleware('auth');
-    }    
-    
+    }
+
     /**
      * Show all of the message threads to the user.
      *
@@ -30,9 +27,8 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        
         $users = User::where('id', '!=', Auth::id())->get();
-        
+
         $currentUserId = Auth::user()->id;
 
         $threads = Thread::forUser($currentUserId)->latest('updated_at')->get();
@@ -48,15 +44,13 @@ class MessagesController extends Controller
      */
     public function show($id)
     {
-        
         try {
             $thread = Thread::findOrFail($id);
         } catch (ModelNotFoundException $e) {
-
             return redirect('profile/messages')->with('error', trans('startup.notifications.profile.message_error', ['id' => $id]));
         }
 
-        if(!$thread->hasParticipant(\Auth::id())) {
+        if (! $thread->hasParticipant(\Auth::id())) {
             return redirect('profile/messages')->with('error', trans('startup.notifications.profile.message_error2'));
         }
 
@@ -87,7 +81,6 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
-        
         $this->validate($request, [
             'subject' => 'required',
             'message' => 'required',
@@ -128,12 +121,11 @@ class MessagesController extends Controller
      * @param $id
      * @return mixed
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         try {
             $thread = Thread::findOrFail($id);
         } catch (ModelNotFoundException $e) {
-
             return redirect('profile/messages')->with('error', trans('startup.notifications.profile.message_error', ['id' => $id]));
         }
 
@@ -159,15 +151,15 @@ class MessagesController extends Controller
         $participant->last_read = new Carbon;
         $participant->save();
 
-        return redirect('profile/messages/' . $id)->with('info', trans('startup.notifications.profile.post_message'));
+        return redirect('profile/messages/'.$id)->with('info', trans('startup.notifications.profile.post_message'));
     }
-    
+
     public function destroy($id)
-    {    
+    {
         $thread = Thread::find($id);
-        
+
         $thread->delete();
-        
+
         return redirect('profile/messages')->with('success', trans('startup.notifications.profile.delete_message'));
     }
 }
