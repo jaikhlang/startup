@@ -132,7 +132,7 @@
       </p>
       
       <a href="{{ config('app.url', 'http://localhost') }}" class="navbar-text pull-right">
-      {{ trans('startup.version') }} 1.2</a>
+      {{ trans('startup.version') }} 1.3</a>
     </div>
     
     

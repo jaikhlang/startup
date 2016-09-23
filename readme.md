@@ -29,6 +29,7 @@ user profile,admin backend and much more.
 * File Uploads from admin section.
 * Authy 2-factor Authentication
 * Language support
+* Messages, send private messages with users.
 
 ## Requirements
 
@@ -67,6 +68,8 @@ All new user registered is getting default User role.
 * [dflydev/dflydev-apache-mime-types](https://github.com/dflydev/dflydev-apache-mime-types)
 * [srmklive/authy](https://github.com/srmklive/laravel-twofactor-authentication)
 * [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
+* [cmgmyr/laravel-messenger](https://github.com/cmgmyr/laravel-messenger)
+* [erusev/parsedown](https://github.com/erusev/parsedown) 
 
 ## Screenshots
 [Click here for screenshots](https://github.com/w00p/startup/tree/master/public/uploads/screenshots)
