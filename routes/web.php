@@ -19,8 +19,6 @@ Route::get('/setlang/{lang}', function ($lang) {
     return redirect()->back();
 });
 
-Route::get('/charts', 'HomeController@charts');
-
 Route::group(['namespace' => 'Frontend'], function () {
     
     Route::get('/', 'HomeController@index');
