@@ -11,27 +11,24 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/setlang/{lang}', function ($lang) {
     Session::put('locale', $lang);
 
     return redirect()->back();
 });
 
-Route::get('/contact', 'ContactController@getContact');
-Route::post('/contact', 'ContactController@postContact');
+Route::get('/charts', 'HomeController@charts');
 
-Auth::routes();
-
-Route::get('auth/token', 'Auth\TwoFactorController@showTokenForm');
-Route::post('auth/token', 'Auth\TwoFactorController@validateTokenForm');
-Route::post('auth/two-factor', 'Auth\TwoFactorController@setupTwoFactorAuth');
-
-Route::get('user/activation/{token}', 'Auth\LoginController@activateUser')->name('user.activate');
-
-Route::get('/', 'HomeController@index');
-
-Route::group(['namespace' => 'Profile'], function () {
-            
+Route::group(['namespace' => 'Frontend'], function () {
+    
+    Route::get('/', 'HomeController@index');
+    
+    Route::get('/contact', 'ContactController@getContact');
+    
+    Route::post('/contact', 'ContactController@postContact');
+    
     Route::group(['prefix' => 'profile/messages', 'middleware' => ['can:access-messages']], function () {
                 
         Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
@@ -60,13 +57,23 @@ Route::group(['namespace' => 'Profile'], function () {
     
         Route::post('/updatepassword', 'ProfileController@updatePassword');
         
-    });
-    
+    });    
+
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::get('auth/token', 'Auth\TwoFactorController@showTokenForm');
+
+Route::post('auth/token', 'Auth\TwoFactorController@validateTokenForm');
+
+Route::post('auth/two-factor', 'Auth\TwoFactorController@setupTwoFactorAuth');
+
+Route::get('user/activation/{token}', 'Auth\LoginController@activateUser')->name('user.activate');
+
+
     
-    Route::group(['namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Backend'], function () {
+
+    Route::group(['prefix' => 'admin'], function () {
         
         Route::group(['middleware' => ['can:access-backend']], function () {
             

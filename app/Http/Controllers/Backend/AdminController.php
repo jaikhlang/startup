@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
-use Auth;
+use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,12 +17,12 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the application admin dashboard.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        return view('admin.dashboard');
     }
 }
