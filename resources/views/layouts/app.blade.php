@@ -144,9 +144,8 @@
     <script src="/frontend/js/form.authy.js"></script>
     <script src="/frontend/js/bootstrap-select.min.js"></script>
     <script src="/frontend/js/simplemde.min.js"></script>    
-    <script> var simplemde = new SimpleMDE(); </script>    
     
-    @yield('scripts')  
+    @stack('scripts')  
     
 </body>
 </html>

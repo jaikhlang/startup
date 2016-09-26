@@ -79,4 +79,9 @@
     </div>
   </div>
 </div>
+
+@push('scripts')
+        <script> var simplemde = new SimpleMDE(); </script>  
+@endpush
+
 @stop
