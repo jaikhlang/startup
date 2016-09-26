@@ -1,13 +1,13 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            @include('layouts.partials.alerts') 
+            @include('admin.layouts.partials.alerts') 
         </div>
         
-        @include('admin.partials.nav')
+        @include('admin.layouts.partials.nav')
        
         <div class="col-md-9">
             <div class="panel panel-default">

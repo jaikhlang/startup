@@ -1,6 +1,6 @@
-<script src="/frontend/js/jquery.js"></script>
-<script src="/frontend/js/toastr.js"></script>
-<link rel="stylesheet" type="text/css" href="/frontend/css/toastr.css">
+<script src="/backend/js/jquery.js"></script>
+<script src="/backend/js/toastr.js"></script>
+<link rel="stylesheet" type="text/css" href="/backend/css/toastr.css">
 
 <script>
 

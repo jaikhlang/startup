@@ -8,5 +8,3 @@
 
 $('[data-toggle="tooltip"]').tooltip();             
 });
-
-var simplemde = new SimpleMDE();

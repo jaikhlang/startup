@@ -9,21 +9,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'StartUp 5.3') }}</title>
-    
-    <!-- Styles Authy-->
-    <link rel="stylesheet" href="/frontend/css/flags.authy.css">
-    <link rel="stylesheet" href="/frontend/css/form.authy.css">
+
     <!-- Styles App-->
-    <link rel="stylesheet" href="/frontend/css/app.css">
+    <link rel="stylesheet" href="/backend/css/app.css">
     <!-- Styles StartUp-->
-    <link rel="stylesheet" href="/frontend/css/startup.css">
+    <link rel="stylesheet" href="/backend/css/startup.css">
     <!-- Style Font Awesome -->
-    <link rel="stylesheet" href="/frontend/css/font-awesome.min.css">
-    <!-- Bootstrap Select -->
-    <link rel="stylesheet" href="/frontend/css/bootstrap-select.min.css">    
-     <!-- SimpleMDE -->
-    <link rel="stylesheet" href="/frontend/css/simplemde.min.css">   
-    <!-- Scripts -->
+    <link rel="stylesheet" href="/backend/css/font-awesome.min.css">
+
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -139,12 +132,8 @@
   </div>
 
     <!-- Scripts -->
-    <script src="/frontend/js/app.js"></script>
-    <script src="/frontend/js/startup.js"></script>
-    <script src="/frontend/js/form.authy.js"></script>
-    <script src="/frontend/js/bootstrap-select.min.js"></script>
-    <script src="/frontend/js/simplemde.min.js"></script>    
-    <script> var simplemde = new SimpleMDE(); </script>    
+    <script src="/backend/js/app.js"></script>
+    <script src="/backend/js/startup.js"></script>
     
     @yield('scripts')  
     
