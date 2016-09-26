@@ -5,7 +5,7 @@
                 <div class="admin-sidebar">    
                     <div class="admin-usermenu">
 					<ul class="nav">
-					    @can('view-backend')
+					    @can('access-backend')
 						<li class="{{ set_active(['admin', 'admin']) }}">
 							<a href="{{ url('/admin') }}">
 							<i class="fa fa-dashboard"></i>

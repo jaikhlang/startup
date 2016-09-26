@@ -13,11 +13,11 @@ class PermissionTableSeeder extends Seeder
     public function run()
     {
         $createPermission = new Permission();
-        $createPermission->name = 'view-backend';
+        $createPermission->name = 'access-backend';
         $createPermission->save();
 
         $createPermission = new Permission();
-        $createPermission->name = 'view-profile';
+        $createPermission->name = 'access-profile';
         $createPermission->save();
 
         $createPermission = new Permission();
@@ -39,5 +39,9 @@ class PermissionTableSeeder extends Seeder
         $createPermission = new Permission();
         $createPermission->name = 'manage-uploads';
         $createPermission->save();
+        
+        $createPermission = new Permission();
+        $createPermission->name = 'access-messages';
+        $createPermission->save();        
     }
 }

@@ -92,17 +92,17 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 
-                                @hasrole('User')
+                                @can('access-profile')
                                 <li>
                                     <a href="{{ url('/profile') }}">{{ trans('startup.nav.front.profile') }}</a>
                                 </li> 
-                                @endhasrole
+                                @endcan
                                 
-                                @hasrole('Moderator')
+                                @can('access-backend')
                                 <li>
                                     <a href="{{ url('/admin') }}">{{ trans('startup.nav.front.admin') }}</a>
                                 </li>   
-                                @endhasrole
+                                @endcan
                                 
                                 <li>
                                     <a href="{{ url('/logout') }}"
