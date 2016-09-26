@@ -39,9 +39,9 @@ class PermissionTableSeeder extends Seeder
         $createPermission = new Permission();
         $createPermission->name = 'manage-uploads';
         $createPermission->save();
-        
+
         $createPermission = new Permission();
         $createPermission->name = 'access-messages';
-        $createPermission->save();        
+        $createPermission->save();
     }
 }
