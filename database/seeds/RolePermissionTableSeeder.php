@@ -89,11 +89,11 @@ class RolePermissionTableSeeder extends Seeder
         $createUser->permission_id = '2';
         $createUser->timestamps = false;
         $createUser->save();
-        
+
         $createUser = new PermissionRole();
         $createUser->role_id = '3';
         $createUser->permission_id = '8';
         $createUser->timestamps = false;
-        $createUser->save();        
+        $createUser->save();
     }
 }
