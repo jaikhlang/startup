@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\User;
 use Auth;
 use App\Http\Controllers\Controller;
 
@@ -27,5 +26,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
 }
