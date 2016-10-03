@@ -14,7 +14,7 @@
           {{ trans('startup.pages.admin_uploads.file?') }}
       </div>
       <div class="modal-footer">
-        <form method="POST" action="/admin/upload/file">
+        <form method="POST" action="/admin/settings/backup/file">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <input type="hidden" name="_method" value="DELETE">
           <input type="hidden" name="folder" value="{{ $folder }}">
