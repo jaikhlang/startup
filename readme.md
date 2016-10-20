@@ -36,7 +36,7 @@ user profile,admin backend and much more.
 Before you proceed make sure your server meets the following requirements:
 
 - [Composer](https://getcomposer.org/)
-- [PHP](https://php.net/) >= 5.6.4
+- [PHP](https://php.net/) >= 7.0.x
 - PDO compliant database (SQL, MySQL, PostgreSQL, SQLite)
 
 ## How to Install
